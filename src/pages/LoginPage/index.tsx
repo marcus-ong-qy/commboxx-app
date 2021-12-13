@@ -1,10 +1,13 @@
 import React from 'react';
+import { StyledLoginPage, CommboxxLogo } from './styles/LoginPage.styled'
+
+import commboxxLogoTransparent from '../../assets/commboxx-logos_transparent.png'
 
 const LoginPage = () => {
   return (
-    <div>
-      commboxx login page
-    </div>
+    <StyledLoginPage>
+      <CommboxxLogo src={commboxxLogoTransparent} />
+    </StyledLoginPage>
   );
 }
 
