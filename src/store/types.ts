@@ -17,9 +17,13 @@ export type GetState = () => RootState
 /** Types */
 
 export type ItemType = {
-  image: string
-  title: string
-  from: string
+  itemID: number
+  itemName: string
+  userName: string
+  userID: number
+  description: string
+  remarks: string
+  photo: string
 }
 
 /** Actions' types */

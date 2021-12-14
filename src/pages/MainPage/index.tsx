@@ -19,7 +19,7 @@ const MainPage = () => {
     <MainPageStyled>
       <ItemCardsDiv>
         {commspaceItems.map((item) => (
-          <ItemCard image={item.image} title={item.title} from={item.from} />
+          <ItemCard image={item.photo} title={item.itemName} from={item.userName} />
         ))}
       </ItemCardsDiv>
       <PostButton />
