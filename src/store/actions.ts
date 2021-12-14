@@ -1,8 +1,9 @@
 import { Dispatch, GetState, ActionTypes, ACTIONS } from './types'
 
-export const setThree = () => (dispatch: Dispatch<ActionTypes>, getState: GetState) => {
+export const addItem = () => (dispatch: Dispatch<ActionTypes>, getState: GetState) => {
+  const { commspaceItems } = getState().commboxx_reducer
   dispatch({
-    type: ACTIONS.THREE,
-    number: 3,
+    type: ACTIONS.ADD_ITEM,
+    commspaceItems: commspaceItems,
   })
 }

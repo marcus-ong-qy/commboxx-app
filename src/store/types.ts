@@ -15,19 +15,22 @@ export type Dispatch<CustomActionTypes extends Action> = ThunkDispatch<RootState
 export type GetState = () => RootState
 
 /** Types */
-type numberThree = {
-  number: 3
+
+export type ItemType = {
+  image: string
+  title: string
+  from: string
 }
 
 /** Actions' types */
 export enum ACTIONS {
-  THREE = 'ACTIONS.THREE',
+  ADD_ITEM = 'ACTIONS.ADD_ITEM',
 }
 
 /** Actions */
-export type SetThree = {
-  type: typeof ACTIONS.THREE
-  number: 3
+export type AddItem = {
+  type: typeof ACTIONS.ADD_ITEM
+  commspaceItems: ItemType[]
 }
 
-export type ActionTypes = SetThree
+export type ActionTypes = AddItem
