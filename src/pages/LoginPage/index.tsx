@@ -1,4 +1,7 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
+
+import { PATHS } from '../../routes/PATHS'
 import {
   StyledLoginPage,
   CommboxxLogo,
@@ -6,19 +9,27 @@ import {
   StyledButton,
   RegisterLink,
   ForgetPwdLink,
+  LoginForm,
+  LinksDiv,
 } from './styles/LoginPage.styled'
 
 import commboxxLogoTransparent from '../../assets/commboxx-logos_transparent.png'
 
 const LoginPage = () => {
+  const navigate = useNavigate()
+
   return (
     <StyledLoginPage>
       <CommboxxLogo src={commboxxLogoTransparent} />
-      <StyledInput placeholder="Username" />
-      <StyledInput placeholder="Password" />
-      <StyledButton>Login</StyledButton>
-      <RegisterLink>Register</RegisterLink>
-      <ForgetPwdLink>Forget Password</ForgetPwdLink>
+      <LoginForm>
+        <StyledInput placeholder="Username" />
+        <StyledInput placeholder="Password" />
+        <StyledButton onClick={() => navigate(PATHS.MAIN)}>Login</StyledButton>
+        <LinksDiv>
+          <RegisterLink>Register</RegisterLink>
+          <ForgetPwdLink>Forget Password</ForgetPwdLink>
+        </LinksDiv>
+      </LoginForm>
     </StyledLoginPage>
   )
 }

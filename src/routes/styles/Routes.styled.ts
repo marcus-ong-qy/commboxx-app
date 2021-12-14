@@ -1,10 +1,14 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+import { headerBarHeight } from '../../components/HeaderBar/styles/HeaderBar.styled'
 import { lemonBg } from '../../pages/styles/Colours'
 
-export const StyledMain = styled.main<{ hasFooter?: boolean }>`
-  // padding-top: 3rem; /*top nav bar*/
+export const lemonBackground = css`
   height: 100%;
   min-height: 100vh;
   background-color: ${lemonBg};
-  /* ${(props) => props.hasFooter && 'margin-bottom: -10rem;'} */
+`
+
+export const StyledMain = styled.main<{ withHeaderBar?: boolean }>`
+  padding-top: ${(props) => (props.withHeaderBar ? headerBarHeight : 0)}; /*header bar*/
+  ${lemonBackground}
 `
