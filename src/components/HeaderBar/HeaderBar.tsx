@@ -21,7 +21,7 @@ const SideMenu = ({ setMenuOpen }: { setMenuOpen: any }) => {
       <SideMenuDiv>
         <CloseButton onClick={() => setMenuOpen(false)} />
         <SideBarLink onClick={() => navigate(PATHS.MAIN)}>commspace</SideBarLink>
-        <SideBarLink>my profile</SideBarLink>
+        <SideBarLink onClick={() => navigate(PATHS.PROFILEPAGE)}>my profile</SideBarLink>
         <SideBarLink>settings</SideBarLink>
         <SideBarWarningLink onClick={() => navigate(PATHS.LOGIN)}>log out</SideBarWarningLink>
       </SideMenuDiv>
