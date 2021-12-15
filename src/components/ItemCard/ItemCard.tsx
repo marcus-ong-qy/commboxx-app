@@ -30,12 +30,12 @@ const ItemCard = ({ item, onClick }: { item: ItemType; onClick: any }) => {
       <ItemCardFrom>From:&nbsp;{item.userName}</ItemCardFrom>
       <ItemCardTagsDiv>
         Tags:&nbsp;
-        {item.tags.map((tag) => (
+        {item.tags?.map((tag) => (
           <ItemCardTags>
             {tag}
             ,&nbsp;
           </ItemCardTags>
-        ))}
+        )) ?? '-'}
       </ItemCardTagsDiv>
       <ItemCardStatusDiv>Status: {displayStatusTag(item.status)}</ItemCardStatusDiv>
     </ItemCardStyled>

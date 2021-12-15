@@ -1,4 +1,4 @@
-import { Dispatch, GetState, ActionTypes, ACTIONS } from './types'
+import { Dispatch, GetState, ActionTypes, ACTIONS, ItemType } from './types'
 
 export const getItem = () => (dispatch: Dispatch<ActionTypes>, getState: GetState) => {
   const url = 'https://backend-repo-ihh.eugenetan1.repl.co/items'
@@ -16,10 +16,24 @@ export const getItem = () => (dispatch: Dispatch<ActionTypes>, getState: GetStat
     .catch((err) => alert(err))
 }
 
-export const addItem = () => (dispatch: Dispatch<ActionTypes>, getState: GetState) => {
+export const addItem = (newItem: ItemType) => (dispatch: Dispatch<ActionTypes>, getState: GetState) => {
+  const url = 'https://backend-repo-ihh.eugenetan1.repl.co/items'
+  fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+    body: JSON.stringify(newItem),
+  })
+    .then((resp) => resp.json())
+    .catch((err) => alert(err))
+}
+
+export const addItemOffline = (newItem: ItemType) => (dispatch: Dispatch<ActionTypes>, getState: GetState) => {
   const { commspaceItems } = getState().commboxx_reducer
   dispatch({
     type: ACTIONS.ADD_ITEM,
-    commspaceItems: commspaceItems,
+    commspaceItems: [...commspaceItems, newItem],
   })
 }

@@ -6,6 +6,7 @@ import ItemCard from '../../components/ItemCard/ItemCard'
 import { PATHS } from '../../routes/PATHS'
 // eslint-disable-next-line
 import { getItem } from '../../store/actions'
+import { usingBackend } from '../../store/reducer'
 import { ItemType, RootState } from '../../store/types'
 import {
   ItemCardsDiv,
@@ -49,10 +50,13 @@ const MainPage = () => {
   const { commspaceItems } = useSelector((state: RootState) => state.commboxx_reducer)
   const [displayItems, setDisplayItems] = useState(commspaceItems) // TODO search/filter results
 
-  // // uncomment if backend used
   useEffect(() => {
-    // dispatch(getItem())
+    usingBackend && dispatch(getItem())
   }, [])
+
+  useEffect(() => {
+    setDisplayItems(commspaceItems)
+  }, [commspaceItems])
 
   return (
     <MainPageStyled>
