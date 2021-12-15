@@ -5,7 +5,7 @@ import { ACTIONS, ActionTypes, ItemType } from './types'
 import hairDryer from '../assets/hair-dryer.png'
 import vacuumCleaner from '../assets/vacuum-cleaner.png'
 
-export const usingBackend = true
+export const usingBackend = 1
 
 const commspaceItemsDataDefault: ItemType[] = usingBackend
   ? [] // if backend is used, no need for sample data
