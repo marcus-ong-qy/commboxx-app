@@ -1,9 +1,11 @@
 import React from 'react'
-import { LoadingPageStyled, LoadingText } from './styles/LoadingPage.styled'
+import { CommboxxLogo, LoadingPageStyled, LoadingText } from './styles/LoadingPage.styled'
+import commboxxLogoTransparent from '../../assets/commboxx-logos_transparent.png'
 
 const LoadingPage = () => {
   return (
     <LoadingPageStyled>
+      <CommboxxLogo src={commboxxLogoTransparent} />
       <LoadingText>loading...</LoadingText>
     </LoadingPageStyled>
   )
