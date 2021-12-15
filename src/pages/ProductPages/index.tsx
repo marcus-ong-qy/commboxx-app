@@ -1,6 +1,8 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
+import { getItem } from '../../store/actions'
+import { usingBackend } from '../../store/reducer'
 
 import { ItemType, RootState } from '../../store/types'
 import {
@@ -43,10 +45,20 @@ const ChatButton = () => {
 }
 
 const ProductPages = () => {
+  const dispatch = useDispatch()
   const params = useParams<'productID'>()
   const { commspaceItems } = useSelector((state: RootState) => state.commboxx_reducer)
+  const [displayItems, setDisplayItems] = useState(commspaceItems) // TODO search/filter results
 
-  const productData: ItemType | undefined = commspaceItems?.filter(
+  useEffect(() => {
+    usingBackend && dispatch(getItem())
+  }, [])
+
+  useEffect(() => {
+    setDisplayItems(commspaceItems)
+  }, [commspaceItems])
+
+  const productData: ItemType | undefined = displayItems?.filter(
     (item) => item.itemID === parseInt(params.productID ?? ''),
   )[0]
 

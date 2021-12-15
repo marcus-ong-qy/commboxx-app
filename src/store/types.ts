@@ -24,7 +24,7 @@ export type ItemType = {
   description: string
   remarks: string
   photo: string
-  tags: string[]
+  tags?: string[]
   status: number
 }
 
