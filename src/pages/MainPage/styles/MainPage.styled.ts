@@ -1,3 +1,4 @@
+import { Button } from 'antd'
 import styled from 'styled-components'
 import { Input } from 'antd'
 import { chromeWhite } from '../../styles/Colours'
@@ -43,12 +44,10 @@ export const PostButtonStyled = styled.div`
   width: 78vw;
   height: 8vh;
   background: ${chromeWhite};
-
   border-radius: 10px;
   border-style: solid;
   border-width: 1.5px;
   box-shadow: 0 1px 2px gray;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -56,6 +55,7 @@ export const PostButtonStyled = styled.div`
 
 export const PostButtonLabel = styled.em`
   font-size: 1.8rem;
+  font-style: italic;
 
   @media (max-width: 400px) {
     font-size: 7vw;

@@ -11,7 +11,6 @@ import {
   ItemCardsDiv,
   MainPageStyled,
   PostButtonStyled,
-  PostButtonLabel,
   SearchDivStyled,
   SearchBarStyled,
 } from './styles/MainPage.styled'
@@ -39,11 +38,8 @@ const SearchDiv = ({ setDisplayItems }: { setDisplayItems: React.Dispatch<React.
 }
 
 const PostButton = () => {
-  return (
-    <PostButtonStyled>
-      <PostButtonLabel>Put up an item for loan</PostButtonLabel>
-    </PostButtonStyled>
-  )
+  const navigate = useNavigate()
+  return <PostButtonStyled onClick={() => navigate(PATHS.LOANINGPAGE)}>Put up an item for loan </PostButtonStyled>
 }
 
 const MainPage = () => {
