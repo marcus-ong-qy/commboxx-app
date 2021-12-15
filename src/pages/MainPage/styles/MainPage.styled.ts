@@ -7,12 +7,12 @@ export const MainPageStyled = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 `
 
 export const SearchDivStyled = styled.div`
   width: 100%;
   height: 8vh;
-
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -21,26 +21,25 @@ export const SearchDivStyled = styled.div`
 
 export const SearchBarStyled = styled(Input)`
   width: 80vw;
-  height: 80%;
-  margin-top: auto;
+  height: 70%;
+  margin: auto;
+  border-radius: 10px;
 `
 
 export const ItemCardsDiv = styled.div`
   width: 100%;
-  height: 62vh;
-
+  height: 70vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   overflow: scroll;
-
   ::-webkit-scrollbar {
     display: none;
   }
 `
 
 export const PostButtonStyled = styled.div`
-  margin: 2vh;
+  margin-top: 2vh;
   width: 78vw;
   height: 8vh;
   background: ${chromeWhite};
@@ -51,12 +50,12 @@ export const PostButtonStyled = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  bottom: 0;
 `
 
 export const PostButtonLabel = styled.em`
   font-size: 1.8rem;
   font-style: italic;
-
   @media (max-width: 400px) {
     font-size: 7vw;
   }
