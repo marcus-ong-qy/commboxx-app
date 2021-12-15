@@ -1,10 +1,12 @@
 import React from 'react'
-import HeaderBar from '../components/HeaderBar/HeaderBar'
+import { useNavigate } from 'react-router-dom'
 
-import { StyledMain } from './styles/Routes.styled'
+import HeaderBar from '../components/HeaderBar/HeaderBar'
+import { BackButton, StyledMain } from './styles/Routes.styled'
 
 export const RouteWithoutNav = (routeProps: { component: React.LazyExoticComponent<() => JSX.Element> }) => {
   const { component: Component } = routeProps
+
   return (
     <StyledMain>
       <Component />
@@ -17,9 +19,22 @@ export const RouteWithTopNav = (routeProps: {
   title: string
 }) => {
   const { component: Component, title } = routeProps
+
   return (
     <StyledMain withHeaderBar>
       <HeaderBar title={title} />
+      <Component />
+    </StyledMain>
+  )
+}
+
+export const RouteWithBackButton = (routeProps: { component: React.LazyExoticComponent<() => JSX.Element> }) => {
+  const navigate = useNavigate()
+  const { component: Component } = routeProps
+
+  return (
+    <StyledMain>
+      <BackButton onClick={() => navigate(-1)} />
       <Component />
     </StyledMain>
   )

@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, Routes as Switch } from 'react-router-dom'
 
 import { PATHS } from './PATHS'
-import { RouteWithoutNav, RouteWithTopNav } from './RouteTypes'
+import { RouteWithBackButton, RouteWithoutNav, RouteWithTopNav } from './RouteTypes'
 
 const LoginPage = React.lazy(() => import(/* webpackChunckName: "LoginPage" */ '../pages/LoginPage'))
 const RegisterPage = React.lazy(() => import(/* webpackChunckName: "RegisterPage" */ '../pages/RegisterPage'))
@@ -16,10 +16,11 @@ const ProductPages = React.lazy(() => import(/* webpackChunckName: "ProductPages
 export const Routes = () => (
   <Switch>
     <Route path={PATHS.LOGIN} element={<RouteWithoutNav component={LoginPage} />} />
-    <Route path={PATHS.REGISTER} element={<RouteWithoutNav component={RegisterPage} />} />
-    <Route path={PATHS.FORGET_PASSWORD} element={<RouteWithoutNav component={ForgetPasswordPage} />} />
+    <Route path={PATHS.REGISTER} element={<RouteWithBackButton component={RegisterPage} />} />
+    <Route path={PATHS.FORGET_PASSWORD} element={<RouteWithBackButton component={ForgetPasswordPage} />} />
+
     <Route path={PATHS.MAIN} element={<RouteWithTopNav component={MainPage} title="commspace" />} />
     <Route path={PATHS.PROFILEPAGE} element={<RouteWithTopNav component={ProfilePage} title={'Profile info'} />} />
-    <Route path={`${PATHS.PRODUCT_PAGE}/:productID`} element={<RouteWithoutNav component={ProductPages} />} />
+    <Route path={`${PATHS.PRODUCT_PAGE}/:productID`} element={<RouteWithBackButton component={ProductPages} />} />
   </Switch>
 )

@@ -1,19 +1,6 @@
 import styled from 'styled-components'
-import { LeftOutlined, WechatOutlined } from '@ant-design/icons'
+import { WechatOutlined } from '@ant-design/icons'
 import { chromeWhite, grey } from '../../styles/Colours'
-
-export const BackButton = styled(LeftOutlined)`
-  position: absolute;
-  top: 5vw;
-  left: 5vw;
-
-  svg {
-    height: 30px;
-    width: 30px;
-  }
-
-  cursor: pointer;
-`
 
 export const ProductPhoto = styled.img`
   width: 100%;

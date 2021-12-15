@@ -1,4 +1,6 @@
 import styled, { css } from 'styled-components'
+import { LeftOutlined } from '@ant-design/icons'
+
 import { headerBarHeight } from '../../components/HeaderBar/styles/HeaderBar.styled'
 import { lemonBg } from '../../pages/styles/Colours'
 
@@ -16,4 +18,17 @@ export const StyledMain = styled.main<{ withHeaderBar?: boolean }>`
   ::-webkit-scrollbar {
     display: none;
   }
+`
+
+export const BackButton = styled(LeftOutlined)`
+  position: absolute;
+  top: 5vw;
+  left: 5vw;
+
+  svg {
+    height: 30px;
+    width: 30px;
+  }
+
+  cursor: pointer;
 `

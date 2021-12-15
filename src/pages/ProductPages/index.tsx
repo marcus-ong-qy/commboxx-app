@@ -1,10 +1,9 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 import { ItemType, RootState } from '../../store/types'
 import {
-  BackButton,
   ChatButtonLabel,
   ChatButtonLogo,
   ChatButtonStyled,
@@ -45,7 +44,6 @@ const ChatButton = () => {
 
 const ProductPages = () => {
   const params = useParams<'productID'>()
-  const navigate = useNavigate()
   const { commspaceItems } = useSelector((state: RootState) => state.commboxx_reducer)
 
   const productData: ItemType | undefined = commspaceItems?.filter(
@@ -55,7 +53,6 @@ const ProductPages = () => {
   // productData && ...
   return (
     <ProductPageStyled>
-      <BackButton onClick={() => navigate(-1)} />
       <ProductPhoto src={productData.photo} />
       <ProductName>{productData.itemName}</ProductName>
       <InfoDiv productData={productData} />

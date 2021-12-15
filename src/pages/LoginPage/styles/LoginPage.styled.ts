@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 import { Button, Input } from 'antd'
-import { darkGreen, lemonBg, linkHighlight } from '../../styles/Colours'
+import { darkGreen, linkHighlight } from '../../styles/Colours'
 
 export const StyledLoginPage = styled.div`
   width: 100%;
@@ -16,7 +16,6 @@ export const CommboxxLogo = styled.img`
   margin-bottom: 8vh;
   width: 64vw;
   height: 64vw;
-  background: ${lemonBg};
 `
 
 export const LoginForm = styled.div`
@@ -42,7 +41,7 @@ export const StyledButton = styled(Button)`
 
 export const LinksDiv = styled.div`
   width: 95%;
-  margin-top: 15.5vh; // TODO margin-top auto doesn't work
+  margin-top: 15.5vh;
 
   display: flex;
   flex-direction: row;
