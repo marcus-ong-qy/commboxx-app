@@ -26,8 +26,8 @@ const LoginPage = () => {
         <StyledInput placeholder="Password" />
         <StyledButton onClick={() => navigate(PATHS.MAIN)}>Login</StyledButton>
         <LinksDiv>
-          <RegisterLink>Register</RegisterLink>
-          <ForgetPwdLink>Forget Password</ForgetPwdLink>
+          <RegisterLink onClick={() => navigate(PATHS.REGISTER)}>Register</RegisterLink>
+          <ForgetPwdLink onClick={() => navigate(PATHS.FORGET_PASSWORD)}>Forget Password</ForgetPwdLink>
         </LinksDiv>
       </LoginForm>
     </StyledLoginPage>

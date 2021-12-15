@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 
 export const ItemCardStyled = styled.div`
   width: 244px;
-  min-height: 244px;
+  min-height: 294px;
 
   margin: 13px;
 
@@ -22,6 +22,7 @@ export const ItemCardImage = styled.img`
 `
 
 const cardTextStyle = css`
+  margin: 8px;
   margin-left: 19px;
 `
 
@@ -30,7 +31,38 @@ export const ItemCardTitle = styled.h2`
   font-size: 24px;
 `
 
-export const ItemCardFrom = styled.em`
+export const ItemCardFrom = styled.p`
   ${cardTextStyle}
+  font-style: italic;
+`
+
+export const ItemCardTagsDiv = styled.p`
+  ${cardTextStyle}
+  height: 12px;
+  /* text-overflow: ellipsis;
+  overflow: scroll; */
   margin-bottom: 20px;
+`
+
+export const ItemCardTags = styled.span`
+  font-style: italic;
+  font-weight: bold;
+  text-decoration: underline;
+`
+
+export const ItemCardStatusDiv = styled.div`
+  ${cardTextStyle}
+`
+
+export const StatusTag = styled.div.attrs({})<{ bg: string }>`
+  padding: 0.25rem;
+
+  border-style: solid;
+  border-color: black;
+  border-width: 1.5px;
+  border-radius: 0.6rem;
+
+  display: inline;
+  background: ${(props) => props.bg};
+  color: white;
 `

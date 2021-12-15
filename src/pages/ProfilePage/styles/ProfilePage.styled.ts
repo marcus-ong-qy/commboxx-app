@@ -1,6 +1,6 @@
 import { Button, Input } from 'antd'
 import styled from 'styled-components'
-import { chromeWhite, darkGreen, lemonBg } from '../../styles/Colours'
+import { chromeWhite, lemonBg } from '../../styles/Colours'
 
 export const StyledProfilePage = styled.div`
   width: 80vw;

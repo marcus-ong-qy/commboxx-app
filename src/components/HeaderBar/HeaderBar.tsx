@@ -26,7 +26,6 @@ const SideMenu = ({ setMenuOpen }: { setMenuOpen: any }) => {
             setMenuOpen(false)
           }}
         >
-          {' '}
           commspace
         </SideBarLink>
         <SideBarLink
@@ -41,7 +40,6 @@ const SideMenu = ({ setMenuOpen }: { setMenuOpen: any }) => {
         <SideBarWarningLink
           onClick={() => {
             navigate(PATHS.LOGIN)
-            setMenuOpen(false)
           }}
         >
           log out

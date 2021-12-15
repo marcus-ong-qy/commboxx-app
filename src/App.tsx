@@ -4,7 +4,6 @@ import { Provider } from 'react-redux'
 
 import { Routes } from './routes/Routes'
 import store from './store/store'
-import './App.css'
 import LoadingPage from './pages/LoadingPage/main'
 
 function App() {

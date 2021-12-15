@@ -17,14 +17,22 @@ export type GetState = () => RootState
 /** Types */
 
 export type ItemType = {
-  image: string
-  title: string
-  from: string
+  itemID: number
+  itemName: string
+  userName: string
+  userID: string
+  description: string
+  remarks: string
+  photo: string
+  tags: string[]
+  status: number
 }
 
 /** Actions' types */
+
 export enum ACTIONS {
   ADD_ITEM = 'ACTIONS.ADD_ITEM',
+  GET_ITEM = 'ACTIONS.GET_ITEM',
 }
 
 /** Actions */
@@ -33,4 +41,9 @@ export type AddItem = {
   commspaceItems: ItemType[]
 }
 
-export type ActionTypes = AddItem
+export type GetItem = {
+  type: typeof ACTIONS.GET_ITEM
+  commspaceItems: ItemType[]
+}
+
+export type ActionTypes = AddItem | GetItem

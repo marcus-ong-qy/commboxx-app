@@ -8,7 +8,6 @@ import {
   MainProfileBox,
   StyledButton,
   StyledProfilePage,
-  UserDetailStyle,
 } from './styles/ProfilePage.styled'
 
 import commboxxLogoTransparent from '../../assets/commboxx-logos_transparent.png'
