@@ -20,10 +20,12 @@ export type ItemType = {
   itemID: number
   itemName: string
   userName: string
-  userID: number
+  userID: string
   description: string
   remarks: string
   photo: string
+  tags: string[]
+  status: number
 }
 
 /** Actions' types */

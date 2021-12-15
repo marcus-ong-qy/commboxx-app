@@ -1,7 +1,7 @@
 import { Dispatch, GetState, ActionTypes, ACTIONS } from './types'
 
 export const getItem = () => (dispatch: Dispatch<ActionTypes>, getState: GetState) => {
-  const url = 'https://backend-repo-ihh.eugenetan1.repl.co/items/items'
+  const url = 'https://backend-repo-ihh.eugenetan1.repl.co/items'
   fetch(url, {
     method: 'GET',
     mode: 'cors',

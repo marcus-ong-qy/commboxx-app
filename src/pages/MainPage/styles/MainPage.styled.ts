@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Input } from 'antd'
 import { chromeWhite } from '../../styles/Colours'
 
 export const MainPageStyled = styled.div`
@@ -7,9 +8,25 @@ export const MainPageStyled = styled.div`
   align-items: center;
 `
 
+export const SearchDivStyled = styled.div`
+  width: 100%;
+  height: 8vh;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+`
+
+export const SearchBarStyled = styled(Input)`
+  width: 80vw;
+  height: 80%;
+  margin-top: auto;
+`
+
 export const ItemCardsDiv = styled.div`
   width: 100%;
-  height: 70vh;
+  height: 62vh;
 
   display: flex;
   flex-direction: column;
