@@ -24,7 +24,7 @@ const ItemCard = ({ item, onClick }: { item: ItemType; onClick: any }) => {
   }
 
   return (
-    <ItemCardStyled onClick={onClick}>
+    <ItemCardStyled id={item.itemID.toString()} onClick={onClick}>
       <ItemCardImage src={item.photo} />
       <ItemCardTitle>{item.itemName}</ItemCardTitle>
       <ItemCardFrom>From:&nbsp;{item.userName}</ItemCardFrom>

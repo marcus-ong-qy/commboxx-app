@@ -1,4 +1,3 @@
-import { Button } from 'antd'
 import styled from 'styled-components'
 import { Input } from 'antd'
 import { chromeWhite } from '../../styles/Colours'
@@ -22,13 +21,13 @@ export const SearchDivStyled = styled.div`
 export const SearchBarStyled = styled(Input)`
   width: 80vw;
   height: 70%;
-  margin: auto;
+  margin-top: auto;
   border-radius: 10px;
 `
 
 export const ItemCardsDiv = styled.div`
   width: 100%;
-  height: 70vh;
+  height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;

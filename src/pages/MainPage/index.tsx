@@ -52,6 +52,7 @@ const MainPage = () => {
 
   useEffect(() => {
     usingBackend && dispatch(getItem())
+    // eslint-disable-next-line
   }, [])
 
   useEffect(() => {

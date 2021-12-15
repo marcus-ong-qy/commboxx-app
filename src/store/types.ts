@@ -16,6 +16,11 @@ export type GetState = () => RootState
 
 /** Types */
 
+export type LoginCredentials = {
+  userID: string
+  passwordHash: string
+}
+
 export type ItemType = {
   itemID: number
   itemName: string
@@ -33,6 +38,7 @@ export type ItemType = {
 export enum ACTIONS {
   ADD_ITEM = 'ACTIONS.ADD_ITEM',
   GET_ITEM = 'ACTIONS.GET_ITEM',
+  LOGIN = 'ACTIONS.LOGIN',
 }
 
 /** Actions */
@@ -46,4 +52,9 @@ export type GetItem = {
   commspaceItems: ItemType[]
 }
 
-export type ActionTypes = AddItem | GetItem
+export type LogIn = {
+  type: typeof ACTIONS.LOGIN
+  loginCredentials: LoginCredentials
+}
+
+export type ActionTypes = AddItem | GetItem | LogIn

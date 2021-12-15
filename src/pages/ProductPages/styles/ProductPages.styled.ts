@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { WechatOutlined } from '@ant-design/icons'
+import styled, { css } from 'styled-components'
+import { EditOutlined, WechatOutlined } from '@ant-design/icons'
 import { chromeWhite, grey } from '../../styles/Colours'
 
 export const ProductPhoto = styled.img`
@@ -36,11 +36,10 @@ export const InfoParaStyled = styled.p`
   margin: 2.5vh 0 5vh 5vw;
 `
 
-export const ChatButtonStyled = styled.div`
+const buttonStyled = css`
   margin: 5vw;
   margin-top: 0;
   height: 8vh;
-  background: ${grey};
 
   border-radius: 10px;
   border-style: solid;
@@ -53,7 +52,7 @@ export const ChatButtonStyled = styled.div`
   justify-content: center;
 `
 
-export const ChatButtonLogo = styled(WechatOutlined)`
+const buttonLogo = css`
   margin-right: 5vw;
   svg {
     width: 36px;
@@ -63,6 +62,32 @@ export const ChatButtonLogo = styled(WechatOutlined)`
   cursor: pointer;
 `
 
-export const ChatButtonLabel = styled.h3`
+const buttonLabel = css`
   font-size: 1.8rem;
+`
+
+export const ChatButtonStyled = styled.div`
+  ${buttonStyled}
+  background: ${grey};
+`
+
+export const ChatButtonLogo = styled(WechatOutlined)`
+  ${buttonLogo}
+`
+
+export const ChatButtonLabel = styled.h3`
+  ${buttonLabel}
+`
+
+export const EditButtonStyled = styled.div`
+  ${buttonStyled}
+  background: orange;
+`
+
+export const EditButtonLogo = styled(EditOutlined)`
+  ${buttonLogo}
+`
+
+export const EditButtonLabel = styled.h3`
+  ${buttonLabel}
 `

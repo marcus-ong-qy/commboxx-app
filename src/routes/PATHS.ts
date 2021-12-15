@@ -6,4 +6,5 @@ export enum PATHS {
   REGISTER = '/register',
   FORGET_PASSWORD = '/forget',
   LOANINGPAGE = '/loaning-page',
+  EDIT_PAGE = '/edit',
 }
