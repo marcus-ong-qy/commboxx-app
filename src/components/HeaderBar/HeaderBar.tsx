@@ -20,10 +20,30 @@ const SideMenu = ({ setMenuOpen }: { setMenuOpen: any }) => {
       <FadeBackground onClick={() => setMenuOpen(false)} />
       <SideMenuDiv>
         <CloseButton onClick={() => setMenuOpen(false)} />
-        <SideBarLink onClick={() => navigate(PATHS.MAIN)}>commspace</SideBarLink>
-        <SideBarLink onClick={() => navigate(PATHS.PROFILEPAGE)}>my profile</SideBarLink>
+        <SideBarLink
+          onClick={() => {
+            navigate(PATHS.MAIN)
+            setMenuOpen(false)
+          }}
+        >
+          commspace
+        </SideBarLink>
+        <SideBarLink
+          onClick={() => {
+            navigate(PATHS.PROFILEPAGE)
+            setMenuOpen(false)
+          }}
+        >
+          my profile
+        </SideBarLink>
         <SideBarLink>settings</SideBarLink>
-        <SideBarWarningLink onClick={() => navigate(PATHS.LOGIN)}>log out</SideBarWarningLink>
+        <SideBarWarningLink
+          onClick={() => {
+            navigate(PATHS.LOGIN)
+          }}
+        >
+          log out
+        </SideBarWarningLink>
       </SideMenuDiv>
     </>
   )

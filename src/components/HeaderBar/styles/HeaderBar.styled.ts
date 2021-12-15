@@ -11,6 +11,7 @@ export const HeaderBarStyled = styled.div`
   width: 100%;
   height: ${headerBarHeight};
   background: ${cbLemon};
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 
   display: flex;
   flex-direction: row;

@@ -1,5 +1,8 @@
 export enum PATHS {
   LOGIN = '/',
   MAIN = '/main',
-  PROFILEPAGE = '/ProfilePage',
+  PROFILEPAGE = '/profile-page',
+  PRODUCT_PAGE = '/product',
+  REGISTER = '/register',
+  FORGET_PASSWORD = '/forget',
 }

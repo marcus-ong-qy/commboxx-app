@@ -27,8 +27,10 @@ export type ItemType = {
 }
 
 /** Actions' types */
+
 export enum ACTIONS {
   ADD_ITEM = 'ACTIONS.ADD_ITEM',
+  GET_ITEM = 'ACTIONS.GET_ITEM',
 }
 
 /** Actions */
@@ -37,4 +39,9 @@ export type AddItem = {
   commspaceItems: ItemType[]
 }
 
-export type ActionTypes = AddItem
+export type GetItem = {
+  type: typeof ACTIONS.GET_ITEM
+  commspaceItems: ItemType[]
+}
+
+export type ActionTypes = AddItem | GetItem

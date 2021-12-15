@@ -54,6 +54,8 @@ type State = {
 
 export const commboxx_reducer: Reducer<State, ActionTypes> = (state = initialState, action) => {
   switch (action.type) {
+    case ACTIONS.GET_ITEM:
+      return { ...state, commspaceItems: action.commspaceItems }
     case ACTIONS.ADD_ITEM:
       return { ...state, commspaceItems: action.commspaceItems }
     default:

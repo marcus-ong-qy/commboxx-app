@@ -10,5 +10,10 @@ export const lemonBackground = css`
 
 export const StyledMain = styled.main<{ withHeaderBar?: boolean }>`
   padding-top: ${(props) => (props.withHeaderBar ? headerBarHeight : 0)}; /*header bar*/
+  overflow: scroll;
   ${lemonBackground}
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `
