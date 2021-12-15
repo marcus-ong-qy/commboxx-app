@@ -12,6 +12,7 @@ const ForgetPasswordPage = React.lazy(
 const MainPage = React.lazy(() => import(/* webpackChunckName: "MainPage" */ '../pages/MainPage'))
 const ProfilePage = React.lazy(() => import(/* webpackChunckName: "ProfilePage" */ '../pages/ProfilePage'))
 const ProductPages = React.lazy(() => import(/* webpackChunckName: "ProductPages" */ '../pages/ProductPages'))
+const EditPage = React.lazy(() => import(/* webpackChunckName: "EditPage" */ '../pages/EditPage'))
 const LoaningPage = React.lazy(() => import(/* webpackChunckName: "LoaningPage" */ '../pages/LoaningPage'))
 
 export const Routes = () => (
@@ -23,6 +24,11 @@ export const Routes = () => (
     <Route path={PATHS.MAIN} element={<RouteWithTopNav component={MainPage} title="commspace" />} />
     <Route path={PATHS.PROFILEPAGE} element={<RouteWithTopNav component={ProfilePage} title={'Profile info'} />} />
     <Route path={`${PATHS.PRODUCT_PAGE}/:productID`} element={<RouteWithBackButton component={ProductPages} />} />
+    <Route
+      path={`${PATHS.PRODUCT_PAGE}/:productID${PATHS.EDIT_PAGE}`}
+      element={<RouteWithBackButton component={EditPage} />}
+    />
+
     <Route path={PATHS.LOANINGPAGE} element={<RouteWithTopNav component={LoaningPage} title={'Loan an item'} />} />
   </Switch>
 )

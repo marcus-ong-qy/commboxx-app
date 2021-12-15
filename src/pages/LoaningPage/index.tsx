@@ -12,21 +12,22 @@ import {
 import commboxxLogoTransparent from '../../assets/commboxx-logos_transparent.png'
 import { useNavigate } from 'react-router-dom'
 import { PATHS } from '../../routes/PATHS'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { addItem, addItemOffline } from '../../store/actions'
-import { ItemType } from '../../store/types'
+import { ItemType, RootState } from '../../store/types'
 import { usingBackend } from '../../store/reducer'
 
 const ProfilePage = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
+  const { loginCredentials } = useSelector((state: RootState) => state.commboxx_reducer)
 
   const initialItemInfo: ItemType = {
     photo: '',
     itemID: 1234,
     itemName: '',
     userID: '1234567',
-    userName: 'Bingo',
+    userName: loginCredentials.userID,
     description: '',
     remarks: '',
     tags: [],

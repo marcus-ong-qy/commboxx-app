@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 
 import { PATHS } from '../../routes/PATHS'
 import { LoginCredentials } from '../../store/types'
@@ -20,6 +21,7 @@ import commboxxLogoTransparent from '../../assets/commboxx-logos_transparent.png
 
 const LoginPage = () => {
   const navigate = useNavigate()
+  const dispatch = useDispatch()
 
   const defaultCredentials: LoginCredentials = {
     userID: '',
@@ -44,7 +46,7 @@ const LoginPage = () => {
         />
         <StyledButton
           onClick={() => {
-            usingBackend ? logIn(loginCredentials) : logInOffline(loginCredentials)
+            usingBackend ? logIn(loginCredentials) : dispatch(logInOffline(loginCredentials))
             navigate(PATHS.MAIN)
           }}
         >
