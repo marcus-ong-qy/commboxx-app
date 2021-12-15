@@ -23,7 +23,7 @@ const ProfilePage = () => {
         <AccountDetails>
           <AccountStyle>Account</AccountStyle>
           <InputStyle>Username</InputStyle>
-          <InputStyled size="large" placeholder="name" value="actual name" />
+          <InputStyled size="large" placeholder="name" />
           <InputStyle>Room Number</InputStyle>
           <InputStyled placeholder="room number" />
           <InputStyle>Telegram Handle</InputStyle>

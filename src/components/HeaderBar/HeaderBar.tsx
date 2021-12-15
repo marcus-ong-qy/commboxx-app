@@ -36,7 +36,6 @@ const SideMenu = ({ setMenuOpen }: { setMenuOpen: any }) => {
         >
           my profile
         </SideBarLink>
-        <SideBarLink>settings</SideBarLink>
         <SideBarWarningLink
           onClick={() => {
             navigate(PATHS.LOGIN)

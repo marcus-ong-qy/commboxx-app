@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components'
 import { MenuOutlined, CloseOutlined } from '@ant-design/icons'
 import { cbLemon, darkGreen } from '../../../pages/styles/Colours'
+import bkgrd from '../../../assets/backgroundimage.jpg'
 
 export const headerBarHeight = '73px'
 
@@ -10,9 +11,11 @@ export const HeaderBarStyled = styled.div`
   left: 0;
   width: 100%;
   height: ${headerBarHeight};
-  background: ${cbLemon};
+  background: url(${bkgrd});
+  background-repeat: no-repeat;
+  background-position: right top;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-
+  float: left;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -100,6 +103,6 @@ export const SideBarLink = styled.a`
 
 export const SideBarWarningLink = styled.a`
   ${sideBarLinkStyle}
-  margin-top: 3vh;
+  margin-top: 2vh;
   color: red;
 `
