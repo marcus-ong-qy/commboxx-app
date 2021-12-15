@@ -1,4 +1,4 @@
-import { Dispatch, GetState, ActionTypes, ACTIONS, ItemType } from './types'
+import { Dispatch, GetState, ActionTypes, ACTIONS, ItemType, LoginCredentials } from './types'
 
 export const getItem = () => (dispatch: Dispatch<ActionTypes>, getState: GetState) => {
   const url = 'https://backend-repo-ihh.eugenetan1.repl.co/items'
@@ -16,7 +16,7 @@ export const getItem = () => (dispatch: Dispatch<ActionTypes>, getState: GetStat
     .catch((err) => alert(err))
 }
 
-export const addItem = (newItem: ItemType) => (dispatch: Dispatch<ActionTypes>, getState: GetState) => {
+export const addItem = (newItem: ItemType) => {
   const url = 'https://backend-repo-ihh.eugenetan1.repl.co/items'
   fetch(url, {
     method: 'POST',
@@ -37,3 +37,25 @@ export const addItemOffline = (newItem: ItemType) => (dispatch: Dispatch<ActionT
     commspaceItems: [...commspaceItems, newItem],
   })
 }
+
+export const logIn = (credentials: LoginCredentials) => {
+  const url = 'https://backend-repo-ihh.eugenetan1.repl.co/auth/login'
+  fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+    body: JSON.stringify(credentials),
+  })
+    .then((resp) => resp.json())
+    .catch((err) => alert(err))
+}
+
+export const logInOffline =
+  (credentials: LoginCredentials) => (dispatch: Dispatch<ActionTypes>, getState: GetState) => {
+    dispatch({
+      type: ACTIONS.LOGIN,
+      loginCredentials: credentials,
+    })
+  }
