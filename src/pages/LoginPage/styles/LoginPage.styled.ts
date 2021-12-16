@@ -30,6 +30,21 @@ export const StyledInput = styled(Input)`
   margin-bottom: 2vh;
 `
 
+export const StyledPasswordInput = styled(Input.Password)`
+  height: 35px;
+  width: 84vw;
+  margin-bottom: 2vh;
+
+  .ant-input {
+    height: 35px;
+    width: 72vw;
+  }
+
+  .anticon {
+    margin: 3vw;
+  }
+`
+
 export const StyledButton = styled(Button)`
   height: 35px;
   width: 84vw;

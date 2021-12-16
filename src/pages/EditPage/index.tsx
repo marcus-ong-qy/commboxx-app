@@ -84,7 +84,7 @@ const EditPage = () => {
         </AccountDetails>
         <StyledButton
           onClick={() => {
-            dispatch(usingBackend ? dispatch(editItem(itemInfo)) : editItemOffline(itemInfo))
+            usingBackend ? editItem(itemInfo) : dispatch(editItemOffline(itemInfo))
             navigate(-1)
           }}
         >
@@ -92,7 +92,7 @@ const EditPage = () => {
         </StyledButton>
         <StyledWarningButton
           onClick={() => {
-            dispatch(usingBackend ? dispatch(deleteItem(itemInfo)) : deleteItemOffline(itemInfo))
+            usingBackend ? deleteItem(itemInfo) : dispatch(deleteItemOffline(itemInfo))
             navigate(PATHS.MAIN)
           }}
         >

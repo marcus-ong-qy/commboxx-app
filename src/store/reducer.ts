@@ -79,6 +79,8 @@ export const commboxx_reducer: Reducer<State, ActionTypes> = (state = initialSta
       return { ...state, commspaceItems: action.commspaceItems }
     case ACTIONS.LOGIN:
       return { ...state, loginCredentials: action.loginCredentials }
+    case ACTIONS.EDIT_USER:
+      return { ...state, loginCredentials: action.loginCredentials }
     default:
       return state
   }
