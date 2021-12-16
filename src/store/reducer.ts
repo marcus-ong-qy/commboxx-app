@@ -5,7 +5,7 @@ import { ACTIONS, ActionTypes, ItemType, LoginCredentials } from './types'
 import hairDryer from '../assets/hair-dryer.png'
 import vacuumCleaner from '../assets/vacuum-cleaner.png'
 
-export const usingBackend = 1
+export const usingBackend = 0
 
 const loginCredentialsDefault: LoginCredentials = {
   userID: '',

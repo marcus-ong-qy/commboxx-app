@@ -1,19 +1,19 @@
 import { Dispatch, GetState, ActionTypes, ACTIONS, ItemType, LoginCredentials } from './types'
 
 export const getCredentials = () => (dispatch: Dispatch<ActionTypes>, getState: GetState) => {
-  const url = 'https://backend-repo-ihh.eugenetan1.repl.co/auth/login'
+  const url = 'https://backend-repo-ihh.eugenetan1.repl.co/users/current'
   fetch(url, {
     method: 'GET',
     mode: 'cors',
   })
     .then((resp) => resp.json())
-    .then((data) => {
+    .then((data: { status: string; userID: string }) => {
       dispatch({
         type: ACTIONS.LOGIN,
-        loginCredentials: data,
+        loginCredentials: { userID: data.userID, passwordHash: '' },
       })
     })
-    .catch((err) => alert(err))
+  // .catch((err) => alert(err))
 }
 
 export const getItem = () => (dispatch: Dispatch<ActionTypes>, getState: GetState) => {
