@@ -1,5 +1,21 @@
 import { Dispatch, GetState, ActionTypes, ACTIONS, ItemType, LoginCredentials } from './types'
 
+export const getCredentials = () => (dispatch: Dispatch<ActionTypes>, getState: GetState) => {
+  const url = 'https://backend-repo-ihh.eugenetan1.repl.co/auth/login'
+  fetch(url, {
+    method: 'GET',
+    mode: 'cors',
+  })
+    .then((resp) => resp.json())
+    .then((data) => {
+      dispatch({
+        type: ACTIONS.LOGIN,
+        loginCredentials: data,
+      })
+    })
+    .catch((err) => alert(err))
+}
+
 export const getItem = () => (dispatch: Dispatch<ActionTypes>, getState: GetState) => {
   const url = 'https://backend-repo-ihh.eugenetan1.repl.co/items'
   fetch(url, {
@@ -38,15 +54,15 @@ export const addItemOffline = (newItem: ItemType) => (dispatch: Dispatch<ActionT
   })
 }
 
-export const editItem = (newItem: ItemType) => {
-  const url = 'https://backend-repo-ihh.eugenetan1.repl.co/items'
+export const editItem = (editItem: ItemType) => {
+  const url = `https://backend-repo-ihh.eugenetan1.repl.co/items/item?itemID=${editItem.itemID}`
   fetch(url, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
       Accept: 'application/json',
     },
-    body: JSON.stringify(newItem),
+    body: JSON.stringify(editItem),
   })
     .then((resp) => resp.json())
     .catch((err) => alert(err))
@@ -82,7 +98,7 @@ export const deleteItemOffline = (deletingItem: ItemType) => (dispatch: Dispatch
   })
 }
 
-export const logIn = (credentials: LoginCredentials) => {
+export const logIn = (credentials: LoginCredentials) => (dispatch: Dispatch<ActionTypes>, getState: GetState) => {
   const url = 'https://backend-repo-ihh.eugenetan1.repl.co/auth/login'
   fetch(url, {
     method: 'POST',
@@ -93,6 +109,12 @@ export const logIn = (credentials: LoginCredentials) => {
     body: JSON.stringify(credentials),
   })
     .then((resp) => resp.json())
+    .then(() => {
+      dispatch({
+        type: ACTIONS.LOGIN,
+        loginCredentials: { ...credentials },
+      })
+    })
     .catch((err) => alert(err))
 }
 
@@ -103,3 +125,21 @@ export const logInOffline =
       loginCredentials: { ...credentials },
     })
   }
+
+// not fully implemented
+export const editUsernameOffline = (newUserID: string) => (dispatch: Dispatch<ActionTypes>, getState: GetState) => {
+  const { commspaceItems, loginCredentials } = getState().commboxx_reducer
+  const oldUserName = loginCredentials.userID
+
+  commspaceItems.map((item) => {
+    if (item.userName === oldUserName) {
+      item.userName = newUserID
+    }
+    return 0
+  })
+
+  dispatch({
+    type: ACTIONS.EDIT_USER,
+    loginCredentials: { ...loginCredentials, userID: newUserID },
+  })
+}

@@ -5,7 +5,7 @@ import { ACTIONS, ActionTypes, ItemType, LoginCredentials } from './types'
 import hairDryer from '../assets/hair-dryer.png'
 import vacuumCleaner from '../assets/vacuum-cleaner.png'
 
-export const usingBackend = 0
+export const usingBackend = 1
 
 const loginCredentialsDefault: LoginCredentials = {
   userID: '',
@@ -78,6 +78,8 @@ export const commboxx_reducer: Reducer<State, ActionTypes> = (state = initialSta
     case ACTIONS.ADD_ITEM:
       return { ...state, commspaceItems: action.commspaceItems }
     case ACTIONS.LOGIN:
+      return { ...state, loginCredentials: action.loginCredentials }
+    case ACTIONS.EDIT_USER:
       return { ...state, loginCredentials: action.loginCredentials }
     default:
       return state

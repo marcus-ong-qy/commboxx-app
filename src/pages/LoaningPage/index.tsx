@@ -17,14 +17,16 @@ import { addItem, addItemOffline } from '../../store/actions'
 import { ItemType, RootState } from '../../store/types'
 import { usingBackend } from '../../store/reducer'
 
+import commboxxLogo from '../../assets/commboxx-logos.jpeg'
+
 const ProfilePage = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const { loginCredentials } = useSelector((state: RootState) => state.commboxx_reducer)
 
   const initialItemInfo: ItemType = {
-    photo: '',
-    itemID: 1234,
+    photo: commboxxLogo,
+    itemID: Math.floor(Math.random() * 1000000),
     itemName: '',
     userID: '1234567',
     userName: loginCredentials.userID,
@@ -58,10 +60,16 @@ const ProfilePage = () => {
             value={itemInfo.remarks}
             onChange={(e) => setItemInfo({ ...itemInfo, remarks: e.target.value })}
           />
+          <InputStyledDetail
+            placeholder="Tags (seperate by commas)"
+            rows={1}
+            value={itemInfo.tags?.join(', ')}
+            onChange={(e) => setItemInfo({ ...itemInfo, tags: e.target.value.split(', ') })}
+          />
         </AccountDetails>
         <StyledButton
           onClick={() => {
-            dispatch(usingBackend ? addItem(itemInfo) : addItemOffline(itemInfo))
+            usingBackend ? addItem(itemInfo) : dispatch(addItemOffline(itemInfo))
             navigate(PATHS.MAIN)
           }}
         >

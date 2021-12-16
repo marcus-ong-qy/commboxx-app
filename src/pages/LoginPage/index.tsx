@@ -15,6 +15,7 @@ import {
   ForgetPwdLink,
   LoginForm,
   LinksDiv,
+  StyledPasswordInput,
 } from './styles/LoginPage.styled'
 
 import commboxxLogoTransparent from '../../assets/commboxx-logos_transparent.png'
@@ -39,14 +40,14 @@ const LoginPage = () => {
           value={loginCredentials.userID}
           onChange={(e) => setLoginCredentials({ ...loginCredentials, userID: e.target.value })}
         />
-        <StyledInput
+        <StyledPasswordInput
           placeholder="Password"
           value={loginCredentials.passwordHash}
           onChange={(e) => setLoginCredentials({ ...loginCredentials, passwordHash: e.target.value })}
         />
         <StyledButton
           onClick={() => {
-            usingBackend ? logIn(loginCredentials) : dispatch(logInOffline(loginCredentials))
+            dispatch(usingBackend ? logIn(loginCredentials) : logInOffline(loginCredentials))
             navigate(PATHS.MAIN)
           }}
         >

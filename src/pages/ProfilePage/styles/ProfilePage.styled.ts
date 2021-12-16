@@ -1,6 +1,6 @@
 import { Button, Input } from 'antd'
 import styled from 'styled-components'
-import { chromeWhite, lemonBg } from '../../styles/Colours'
+import { chromeWhite, darkGreen, lemonBg } from '../../styles/Colours'
 
 export const StyledProfilePage = styled.div`
   width: 80vw;
@@ -35,10 +35,10 @@ export const AccountDetails = styled.div`
 export const AccountStyle = styled.p`
   font-family: Inter;
   font-style: italic;
-  font-weight: normal;
+  font-weight: bold;
   font-size: 21px;
   line-height: 22px;
-  color: #254ddc;
+  color: ${darkGreen};
   margin: 20px;
 `
 export const InputStyle = styled.p`

@@ -39,6 +39,7 @@ export enum ACTIONS {
   ADD_ITEM = 'ACTIONS.ADD_ITEM',
   GET_ITEM = 'ACTIONS.GET_ITEM',
   LOGIN = 'ACTIONS.LOGIN',
+  EDIT_USER = 'ACTIONS.EDIT_USER',
 }
 
 /** Actions */
@@ -57,4 +58,9 @@ export type LogIn = {
   loginCredentials: LoginCredentials
 }
 
-export type ActionTypes = AddItem | GetItem | LogIn
+export type EditUser = {
+  type: typeof ACTIONS.EDIT_USER
+  loginCredentials: LoginCredentials
+}
+
+export type ActionTypes = AddItem | GetItem | LogIn | EditUser
